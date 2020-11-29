@@ -1,0 +1,23 @@
+<%- include('header') %>
+
+    <div class="jumbotron container">
+        <div>
+            <h2>Edit Password Category</h2>
+        </div>
+        <% if(msgg != ''){ %>
+        <p><%= msgg %></p>
+        <% } %>
+        <form class="container" action="/PasswordCategory/edit" method="post">
+            <input type="hidden" name="id" value="<%= id %>">
+            <div class="form-group">
+              <label for="exampleInputPassword1">Category Name</label>
+              <input type="text" name="pass" class="form-control" id="exampleInputPassword1" value="<%= record.password_category %>" >
+              <% if(msg != ''){ %>
+                <p><%= msg.pass.msg %></p>
+              <% } %>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div><p><a href="/PasswordCategory">View All Category List</a></p></div>    
+    </div>
+<%- include('footer') %>
